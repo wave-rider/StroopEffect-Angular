@@ -4,11 +4,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IndexComponent } from './index/index.component';
+import { ReadyComponent } from './ready/ready.component';
+import { Ready2Component } from './ready2/ready2.component';
+import { ExperimentComponent } from './experiment/experiment.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    IndexComponent
+    IndexComponent,
+    ReadyComponent,
+    Ready2Component,
+    ExperimentComponent
   ],
   imports: [
     BrowserModule,
