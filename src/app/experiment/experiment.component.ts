@@ -1,4 +1,5 @@
-import { Component, ElementRef, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-experiment',
@@ -13,7 +14,7 @@ export class ExperimentComponent implements OnInit
   @ViewChild('image', {static: true}) myImage: ElementRef<HTMLImageElement> | undefined;
   @ViewChild('header', {static: true}) header: ElementRef<HTMLElement> | undefined;
 
-  constructor() { }
+  constructor(private db: AngularFirestore) { }
 
   ngOnInit(): void {
   }
@@ -53,13 +54,14 @@ export class ExperimentComponent implements OnInit
           var person = prompt("It took you " + your_time + " seconds. \n Please enter your name", "Harry Potter");
           if (person!=null)
           {
-              db.collection('users').add({
+              this.db.collection('users').add({
                   firstName: person,
                   firstTest: this.timer[0],
                   secondTest: this.timer[1]
               });
           }   
-          //document.getElementById('submit-button').style.display = 'none';
+          if (this.submitButton)
+            this.submitButton.nativeElement.style.display = 'none';
           return;
       }
 

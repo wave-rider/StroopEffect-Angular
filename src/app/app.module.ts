@@ -7,6 +7,10 @@ import { IndexComponent } from './index/index.component';
 import { ReadyComponent } from './ready/ready.component';
 import { Ready2Component } from './ready2/ready2.component';
 import { ExperimentComponent } from './experiment/experiment.component';
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,10 @@ import { ExperimentComponent } from './experiment/experiment.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule, // firestore
+    AngularFireStorageModule // storage
   ],
   providers: [],
   bootstrap: [AppComponent]
