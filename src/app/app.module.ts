@@ -11,6 +11,7 @@ import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+import { ResultsComponent } from './results/results.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
     IndexComponent,
     ReadyComponent,
     Ready2Component,
-    ExperimentComponent
+    ExperimentComponent,
+    ResultsComponent
   ],
   imports: [
     BrowserModule,

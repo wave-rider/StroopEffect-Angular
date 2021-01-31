@@ -1,0 +1,23 @@
+<div class="container">
+    <header>
+      <h3>Test results</h3>
+    </header>
+    <div class="table-wrapper">
+      <table class="table-users">
+        <tr>
+          <th>&nbsp;</th>
+          <th>First Name</th>
+          <th>First Test</th>
+          <th>Second Test</th>
+        </tr>
+        <tr *ngFor="let user of users; let i = index">
+           <td>{{i+1}}</td>
+           <td>{{user.firstName}}</td>
+           <td>{{user.firstTest}}</td>
+           <td>{{user.secondTest}}</td>
+        </tr>
+      </table>
+    <div style="text-align: center;"><a href="index.html">Main</a></div>
+    </div>
+  
+  </div>
